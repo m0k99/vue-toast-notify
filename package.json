@@ -1,19 +1,39 @@
 {
   "name": "vue-toast-notify",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A lightweight Vue 3 toast notification component",
+  "author": "Mohammadreza Khalilikhorram <https://github.com/m0k99>",
+  "license": "MIT",
   "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "build": "vue-tsc -p tsconfig.build.json && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.vue",
+    "type-check": "vue-tsc --noEmit"
   },
-  "dependencies": {
-    "vue": "^3.5.13"
+  "peerDependencies": {
+    "vue": "^3.3.0 || ^3.4.0 || ^3.5.0"
   },
   "devDependencies": {
+    "@types/node": "^22.14.1",
     "@vitejs/plugin-vue": "^5.2.2",
     "@vue/tsconfig": "^0.7.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.21.0",
     "typescript": "~5.7.2",
     "vite": "^6.3.1",
     "vite-plugin-dts": "^4.5.3",
